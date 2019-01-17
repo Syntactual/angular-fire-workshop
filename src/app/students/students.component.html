@@ -1,0 +1,18 @@
+<h2>Students</h2>
+<ul>
+  <li class="text" *ngFor="let student of students | async">
+    <ul>
+      <li>
+          <label>Student ID: </label>
+          {{student.StudentId}}
+      </li>
+      <li>
+          <label>Name: </label>
+          {{student.FirstName}} {{student.LastName}}
+      </li>
+
+
+    </ul>
+
+  </li>
+</ul>
