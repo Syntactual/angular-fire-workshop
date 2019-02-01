@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -8,5 +10,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  title = 'angular-fire-tutorial';
+
 }

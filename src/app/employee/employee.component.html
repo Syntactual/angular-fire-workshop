@@ -1,0 +1,15 @@
+<h1>Employee View</h1>
+<ul>
+  <li class="text" *ngFor="let employee of employees | async">
+    <ul>
+
+      <li>
+          <label>Name: </label>
+          {{employee.FirstName}} {{employee.LastName}}
+      </li>
+
+    </ul>
+
+  </li>
+</ul>
+
