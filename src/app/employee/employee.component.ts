@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { EmployeeService } from '../employee.service';
+import { EmployeeViewModel } from './employee.viewModel';
+import { EmployeeService } from './employee.service';
 import { Observable } from 'rxjs';
 
 
@@ -10,12 +10,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
-  employees: Observable<any[]>;
+  employee: EmployeeViewModel;
   constructor(employeeService: EmployeeService) {
-  this.employees = employeeService.getEmployeeInfo();
+  this.employee = employeeService.getEmployeeInfo();
    }
 
   ngOnInit() {
+       
   }
 
 }

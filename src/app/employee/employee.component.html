@@ -1,15 +1,29 @@
 <h1>Employee View</h1>
-<ul>
-  <li class="text" *ngFor="let employee of employees | async">
-    <ul>
+<p>
+  <h2>{{employee.FirstName}} {{employee.LastName}}</h2>
 
+
+  
+   
+<ul *ngFor="let timeCard of employee.TimeCards | async">
+    <li >
+        <label>Date: </label>
+        {{timeCard.Date}}
+      </li> 
       <li>
-          <label>Name: </label>
-          {{employee.FirstName}} {{employee.LastName}}
+          <label>Time In: </label>
+          {{timeCard.TimeIn}}
       </li>
-
-    </ul>
-
-  </li>
+      <li>
+          <label>Time Out: </label>
+          {{timeCard.TimeOut}}
+      </li>
+      <li>
+          <label>Approved: </label>
+          {{timeCard.Approved}}
+      </li>
 </ul>
+  
+  
+
 
