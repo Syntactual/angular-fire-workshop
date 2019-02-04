@@ -10,8 +10,9 @@ import { EmployeeComponent } from './employee/employee.component';
 import { ManagerComponent } from './manager/manager.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
-import { BrowserAnimationsModule } from  '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app-material.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,7 +28,10 @@ import { AppMaterialModule } from './app-material.module';
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, AppRoutingModule, // imports firebase/storage only needed for storage features
-    BrowserAnimationsModule, AppMaterialModule
+    BrowserAnimationsModule,
+    AppMaterialModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

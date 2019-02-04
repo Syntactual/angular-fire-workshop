@@ -1,29 +1,41 @@
-<h1>Employee View</h1>
-<p>
-  <h2>{{employee.FirstName}} {{employee.LastName}}</h2>
+<div id="parent-container">
+  <mat-card id="title-card">
+    <mat-card-title align="center"><h1>Employee View</h1></mat-card-title>
+    <mat-card-subtitle align="center"><h2>{{employee.FirstName}} {{employee.LastName}}</h2></mat-card-subtitle>
+  </mat-card>
+  <br />
+  <div id="time-cards-container" *ngFor="let timeCard of employee.TimeCards$ | async ">
+      <mat-card>
+          <mat-card-content>
+              <label>Approved: </label> {{timeCard.Approved}}
+              <label>Date: </label> {{timeCard.Date}}
+              <label>Time In: </label>{{timeCard.TimeIn}}
+              <label>Time Out: </label>{{timeCard.TimeOut}}
+          </mat-card-content>
+      </mat-card>
+    </div>
 
 
-  
-   
-<ul *ngFor="let timeCard of employee.TimeCards | async">
-    <li >
-        <label>Date: </label>
-        {{timeCard.Date}}
-      </li> 
-      <li>
-          <label>Time In: </label>
-          {{timeCard.TimeIn}}
-      </li>
-      <li>
-          <label>Time Out: </label>
-          {{timeCard.TimeOut}}
-      </li>
-      <li>
-          <label>Approved: </label>
-          {{timeCard.Approved}}
-      </li>
-</ul>
-  
-  
+</div>
+
+<button mat-stroked-button color="secondary" (click)="showCreateTimeCardContainer()">Create TimeCard</button>
+<div id="creatTimeCardContainer" [hidden]="showCreateTimeCard === false" >
+    <mat-card >
+        <mat-card-content>
+            <label>Date: </label> <input [(ngModel)]="newTimeCard.Date" type="text" placeholder="Date">
+            <label>Time In: </label> <input [(ngModel)]="newTimeCard.TimeIn" type="text" placeholder="Time In">
+            <label>Time Out: </label><input [(ngModel)]="newTimeCard.TimeOut" type="text" placeholder="Time Out">
+        </mat-card-content>
+    </mat-card>
+    <button [disabled]="newTimeCard.Date === '' || newTimeCard.TimeIn === '' || newTimeCard.TimeOut === ''" (click)="submitTimeCard()">Submit</button>
+</div>
+
+
+
+
+
+
+
+
 
 

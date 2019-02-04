@@ -1,19 +1,19 @@
-import { Observable } from "rxjs";
+import { Observable } from 'rxjs';
 
-export class EmployeeViewModel{
+export class EmployeeViewModel {
     FirstName: string;
     LastName: string;
-    TimeCards: Observable<TimeCard[]>;
+    TimeCards$: Observable<TimeCard[]>;
 }
 
-export interface TimeCard{
-    Date: Date;
+export interface TimeCard {
+    Date: string;
     TimeIn: string;
     TimeOut: string;
     Approved: boolean;
 }
 
-export interface Employee{
+export interface Employee {
     FirstName: string;
     LastName: string;
 }
