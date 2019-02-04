@@ -1,6 +1,17 @@
-<h1>{{title}}</h1>
+<div id="parent-container">
+    <mat-card id="title-card">
+        <mat-card-title align="center">{{title}}</mat-card-title>
+        <mat-card-actions align="center">
+            
+                <a mat-stroked-button color="secondary" [routerLink]="['/employee']" routerLinkActive="router-link-active" >Employee View</a>
+            
+        </mat-card-actions>
+      </mat-card>
+</div>
+  
 
 
-<nav>
-  <a [routerLink]="['/employee']" routerLinkActive="router-link-active" >Employee View</a>
-</nav>
+
+   
+
+

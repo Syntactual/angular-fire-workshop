@@ -1,0 +1,12 @@
+#title-card {
+    width: 600px;
+    min-height: 300px;
+    display: inline-block;
+    justify-content: space-between;
+    
+}
+
+#parent-container {
+    text-align: center;
+    
+}
