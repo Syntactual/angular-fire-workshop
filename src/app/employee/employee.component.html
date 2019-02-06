@@ -4,31 +4,37 @@
     <mat-card-subtitle align="center"><h2>{{employee.FirstName}} {{employee.LastName}}</h2></mat-card-subtitle>
   </mat-card>
   <br />
-  <div id="time-cards-container" *ngFor="let timeCard of employee.TimeCards$ | async ">
-      <mat-card>
+  <div id="time-cards-container" *ngFor="let timeCard of employee.TimeCards$ | async">
+      <p>
+        <mat-card class="timeCards" [ngClass]="timeCard.Approved ? 'approved-true' : 'approved-false'" tabindex="0">
           <mat-card-content>
-              <label>Approved: </label> {{timeCard.Approved}}
-              <label>Date: </label> {{timeCard.Date}}
-              <label>Time In: </label>{{timeCard.TimeIn}}
-              <label>Time Out: </label>{{timeCard.TimeOut}}
+<p></p>
+                <p><label>Date: </label> {{timeCard.Date}}</p>
+                <p><label>Time In: </label>{{timeCard.TimeIn}}</p>
+                <p><label>Time Out: </label>{{timeCard.TimeOut}}</p>
           </mat-card-content>
       </mat-card>
+    </p>
     </div>
+    <hr >
+
+    <button mat-stroked-button color="secondary" (click)="showCreateTimeCardContainer()">Create TimeCard</button>
+    <div id="creatTimeCardContainer" [hidden]="showCreateTimeCard === false" >
+        <br />
+        <mat-card class="timeCards" tabindex="0">
+            <mat-card-content>
+                <p><label>Date: </label> <input [(ngModel)]="newTimeCard.Date" type="text" placeholder="Date"></p>
+                <p><label>Time In: </label> <input [(ngModel)]="newTimeCard.TimeIn" type="text" placeholder="Time In"></p>
+                <p><label>Time Out: </label><input [(ngModel)]="newTimeCard.TimeOut" type="text" placeholder="Time Out"></p>
+            </mat-card-content>
+        </mat-card>
+        <p><button mat-stroked-button  color="secondary" [disabled]="newTimeCard.Date === '' || newTimeCard.TimeIn === '' || newTimeCard.TimeOut === ''" (click)="submitTimeCard()">Submit</button></p>
 
 
+    </div>
 </div>
 
-<button mat-stroked-button color="secondary" (click)="showCreateTimeCardContainer()">Create TimeCard</button>
-<div id="creatTimeCardContainer" [hidden]="showCreateTimeCard === false" >
-    <mat-card >
-        <mat-card-content>
-            <label>Date: </label> <input [(ngModel)]="newTimeCard.Date" type="text" placeholder="Date">
-            <label>Time In: </label> <input [(ngModel)]="newTimeCard.TimeIn" type="text" placeholder="Time In">
-            <label>Time Out: </label><input [(ngModel)]="newTimeCard.TimeOut" type="text" placeholder="Time Out">
-        </mat-card-content>
-    </mat-card>
-    <button [disabled]="newTimeCard.Date === '' || newTimeCard.TimeIn === '' || newTimeCard.TimeOut === ''" (click)="submitTimeCard()">Submit</button>
-</div>
+
 
 
 

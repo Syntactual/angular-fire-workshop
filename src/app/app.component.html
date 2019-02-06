@@ -1,7 +1,22 @@
 
+   <mat-toolbar   color="primary">
+     <div id="toolbar">
+        <a class="toolbar-element" id="homeLink" mat-stroked-button color="secondary" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home View</a>
+
+        <a class="toolbar-element" id="employeeLink" mat-stroked-button color="secondary" [routerLink]="['/employee']" routerLinkActive="router-link-active" >Employee View</a>
+
+
+
+        <a class="toolbar-element" mat-stroked-button color="secondary" [routerLink]="['/manager']" routerLinkActive="router-link-active" >Manager View</a>
+
+        <button class="toolbar-element"  mat-stroked-button  (click)="resetTimeCards()" >Reset Time Cards</button>
+     </div>
+
+   </mat-toolbar>
+
         <router-outlet></router-outlet>
 
-        
+
 
 
 

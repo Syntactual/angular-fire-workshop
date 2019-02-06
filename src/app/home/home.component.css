@@ -1,12 +1,16 @@
 #title-card {
     width: 600px;
-    min-height: 300px;
+    min-height: 100px;
     display: inline-block;
     justify-content: space-between;
-    
+
 }
 
 #parent-container {
     text-align: center;
-    
+
+}
+
+#employeeLink {
+  margin-right: 1em;
 }

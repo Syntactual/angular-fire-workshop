@@ -1,3 +1,20 @@
-<p>
-  manager works!
-</p>
+<div id="parent-container">
+    <mat-card id="title-card">
+      <mat-card-title align="center"><h1>Manager View</h1></mat-card-title>
+      <mat-card-subtitle align="center"><h2>{{employee.FirstName}} {{employee.LastName}}</h2></mat-card-subtitle>
+    </mat-card>
+    <br />
+    <div id="time-cards-container" *ngFor="let timeCard of employee.TimeCards$ | async ">
+        <p><mat-card class="timeCards" [ngClass]="timeCard.Approved ? 'approved-true' : 'approved-false'">
+            <mat-card-content>
+                <p id="approve" [hidden]="timeCard.Approved"><label id="approve-label">Approve</label><button mat-stroked-button (click)="approveTimeCard(timeCard.id)" ><mat-icon svgIcon="thumbs-up" id="approve-icon"></mat-icon></button></p>
+
+                <p><label>Date: </label> {{timeCard.Date}}</p>
+                <p><label>Time In: </label>{{timeCard.TimeIn}}</p>
+                <p><label>Time Out: </label>{{timeCard.TimeOut}}</p>
+            </mat-card-content>
+        </mat-card>
+      </p>
+      </div>
+
+  </div>

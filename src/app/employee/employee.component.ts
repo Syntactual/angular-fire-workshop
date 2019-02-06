@@ -10,6 +10,7 @@ import { EmployeeService } from './employee.service';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
+
   employee: EmployeeViewModel;
   showCreateTimeCard: boolean;
   readonly _employeeService: EmployeeService;
@@ -20,12 +21,14 @@ export class EmployeeComponent implements OnInit {
   this._employeeService = employeeService;
   this.showCreateTimeCard = false;
   this.newTimeCard = {
+    id: '',
     Approved: false,
     Date: '',
     TimeIn: '',
     TimeOut: '',
   };
   this._employeeID = 'aEcYJmejgnjuYe8d4ukx';
+
    }
 
   submitTimeCard() {
@@ -41,6 +44,7 @@ export class EmployeeComponent implements OnInit {
     this.showCreateTimeCard = true;
   }
   ngOnInit() {
+
        // tslint:disable-next-line:no-trailing-whitespace
     console.log(this.employee);
   }

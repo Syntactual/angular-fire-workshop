@@ -1,0 +1,40 @@
+
+hr {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+
+#parent-container {
+  text-align: center;
+
+}
+
+.timeCards {
+  width: 600px;
+  min-height: 100px;
+  display: inline-block;
+  justify-content: center;
+
+}
+
+
+.approved-false {
+  background-color: yellow;
+}
+
+.approved-true {
+  background-color: rgb(72, 243, 72)
+}
+
+.approved-rejected {
+  background-color: rgb(245, 106, 106);
+}
+
+
+
+

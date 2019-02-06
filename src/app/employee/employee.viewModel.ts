@@ -1,12 +1,14 @@
 import { Observable } from 'rxjs';
 
 export class EmployeeViewModel {
+    id: string;
     FirstName: string;
     LastName: string;
     TimeCards$: Observable<TimeCard[]>;
 }
 
 export interface TimeCard {
+    id: string;
     Date: string;
     TimeIn: string;
     TimeOut: string;
@@ -14,6 +16,7 @@ export interface TimeCard {
 }
 
 export interface Employee {
+    id: string;
     FirstName: string;
     LastName: string;
 }
